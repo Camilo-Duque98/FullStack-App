@@ -1,5 +1,5 @@
 const Button = ({ name }) => {
-  return <button className="bg-blue hover:bg-blue2 text-white w-20">{name}</button>;
+  return <button className="bg-black hover:bg-blue2 text-white w-24 h-8 rounded">{name}</button>;
 };
 
 export default Button;
