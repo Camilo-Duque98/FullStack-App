@@ -30,37 +30,39 @@ const createTask = async (req, res) => {
 
 // Actualizar una tarea
 
-const putTask = async (req, res, next) => {
+const putTask = async (req, res) => {
+  const { id } = req.params;
+  const { taskType, observation } = req.body;
+  console.log(req.body);
   try {
-    const { id } = req.params;
-    const { taskType, observation } = req.body;
-    if (!taskType || !observation) {
-      return res.status(400).json({ error: "content missing" });
+    const task = await Tasks.findOne({ where: { id } });
+    if (!task) {
+      return res.status(404).send("Task ot find");
     }
-    const task = await Tasks.update(
-      { taskType, observation },
-      {
-        where: { id },
-      }
-    );
 
-    res.status(200).json(task);
+    task.taskType = taskType;
+    task.observation = observation;
+    await task.save();
+    return res.json(task);
   } catch (error) {
-    res.status(400).json({ error: "content missing" });
+    return res.status(500);
   }
 };
 
 //eliminar una tarea
 const deleteTask = async (req, res) => {
   const { id } = req.params;
+  try {
+    const task = await Tasks.findOne({ where: { id } });
 
-  await Tasks.destroy({
-    where: {
-      id,
-    },
-  });
-
-  res.status(204);
+    if (!task) {
+      return res.status(404).send("Task not find");
+    }
+    await task.destroy();
+    res.status(204).json("delete Task");
+  } catch (error) {
+    res.status(500);
+  }
 };
 
 module.exports = { getTask, getOneTask, createTask, putTask, deleteTask };
