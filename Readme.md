@@ -13,7 +13,7 @@ El Stack utilizado esta centrado en NodeJS junto con la base de datos relacional
 * Por un lado, estamos utilizando React vite (por temas de rendimiento) en el Front-end, además de las librerías de axios (para la conexión y las peticiones en el backend), y tailwind para el diseño de la aplicación.  
 * En el caso de el Backend, se está utilizando el Framework de express, junto con el ORM Sequelize, para realizar las consultas directamente a la base de datos.      
 ## Estructura del Proyecto
-![Forma](./Estructura.png)
+![Forma](./image.png)
 ## Documentación  
 ## Frontend
 ### [React](https://react.dev/)  
