@@ -1,11 +1,31 @@
-FROM node:latest
+FROM node:19-alpine3.16 AS build
 
-WORKDIR /home/app
+WORKDIR /app
+
 COPY package*.json ./
+
 RUN npm install
 
 COPY . .
 
-EXPOSE 5173
+RUN npm run build
 
-CMD ["npm", "run dev"]
+# NGINX SERVER
+FROM nginx:1.19.0-alpine AS prod-stage
+COPY --from=build /app/dist /usr/share/nginx/html
+
+EXPOSE 80
+
+CMD ["nginx","-g","daemon off;"]
+
+# FROM node:latest
+
+# WORKDIR /home/app
+# COPY package*.json ./
+# RUN npm install
+
+# COPY . .
+
+# EXPOSE 5173
+
+# CMD ["npm", "run dev"]
