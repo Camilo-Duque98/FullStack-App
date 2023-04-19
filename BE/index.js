@@ -7,9 +7,9 @@ const PORT = process.env.PORT || 4000;
 
 const main = async () => {
   try {
-    //{ force: true })
     await sequelize.sync();
-    await sequelize.authenticate({ force: true });
+    await sequelize.authenticate({ force: true }); //-> opción que vuleve a crear las tablas
+    //await sequelize.authenticate();
     console.log("Connection has been established successfully.");
     app.listen(PORT, () => {
       console.log(`Server running on port ${PORT}`);
