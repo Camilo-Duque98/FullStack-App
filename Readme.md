@@ -31,7 +31,7 @@ docker compose up
 Este comando nos servirá para crear las imagenes y contendores del backend y frontend del proyecto.
 
 
-<!-- # Docker    
+# Docker    
 A continuación se presentan algunos comandos de utilidad de docker:  
 - Descargar una imágen:  
     ```docker  
@@ -55,9 +55,38 @@ A continuación se presentan algunos comandos de utilidad de docker:
     docker create --name DB-analisis postgres
     ```    
     Esto nos devolverá el id de el contenedo y nos debería crear un contenedor llamado ``DB-analisis`` con la imagen de ``postgres``
-- Para poder listar las imágenes, utilizamos el comando ``ps`` de docker:  
+- Para poder listar las imágenes que están corriendo, utilizamos el comando ``ps`` de docker:  
     ```bash
     docker ps  
-    ```   -->
+    ```      
+- Para poder listar ``"TODAS LAS IMAGENES"``:
+    ```docker    
+    docker ps -a
+    ```  
+- Para poder iniciar un contenedor, utilizamos:  
+    ``` docker  
+    docker start <nombre contenedor / id_contenedor>
+    #Ejemplo  
+    docker start fe_container  
+    o  
+    docker start ec35sfe343
+    ```  
+- Para poder detener un contenedor, utilizamos:  
+    ```docker  
+    docker stop <nombre contenedor / id contenedor>
+    #Ejemplo  
+    docker stop fe_container  
+    o  
+    docker stop ec35sfe343
+    ```
+- Para eliminar un contenedor, utilizamos el siguiente comoando:  
+    ```docker  
+    docker rm <nombre contenedor / id contenedor>  
+    #Ejemplo  
+    docker rm fe_container  
+    o  
+    docker rm ec35sfe343
+    ```  
+Para más información visite el [sitio oficial de Docker](https://docs.docker.com/get-started/).
 
 
