@@ -23,6 +23,41 @@ El Stack utilizado esta centrado en NodeJS junto con la base de datos relacional
 ### [Express](https://expressjs.com/es/guide/routing.html)  
 ### [Sequelize](https://sequelize.org/)    
 
+# Como levantar el proyecto 
+Una vez instalado Docker, deberan iniciarlo y abrir una terminal en la ruta donde se encuentra su proyecto, y escribir el siguiente comando:  
+```docker
+docker compose up
+```  
+Este comando nos servirá para crear las imagenes y contendores del backend y frontend del proyecto.
 
+
+<!-- # Docker    
+A continuación se presentan algunos comandos de utilidad de docker:  
+- Descargar una imágen:  
+    ```docker  
+    docker pull <nombre de la imagen>:<tag de la versión>  
+    #Ejemplo  
+    docker pull postgres:latest  
+    ```  
+    Existe la plataforma [Docker Hub](https://hub.docker.com/), la cuál cuenta con una gran cantidad de imágenes para poder utilizar.  
+- Para poder listar nuestras imágenes:  
+    ```docker  
+    docker images  
+    ```
+- Para poder eliminar una imagen:  
+    ```docker
+    docker rmi <id de la imagen| nombre de la imagen>
+    ```  
+- Para crear un contenedor basado en una imágen:  
+    ```docker
+    docker create --name <nombre que le asignaremos al contenedor> <nombre de la imagen>  
+    #Ejemplo  
+    docker create --name DB-analisis postgres
+    ```    
+    Esto nos devolverá el id de el contenedo y nos debería crear un contenedor llamado ``DB-analisis`` con la imagen de ``postgres``
+- Para poder listar las imágenes, utilizamos el comando ``ps`` de docker:  
+    ```bash
+    docker ps  
+    ```   -->
 
 

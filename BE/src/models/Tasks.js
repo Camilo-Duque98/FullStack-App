@@ -1,6 +1,8 @@
 const { DataTypes } = require("sequelize");
 const sequelize = require("../db/db.js");
 
+//cambiar identidades y atributos dependiendo del modelo diseñado
+//por ustedes.
 const Task = sequelize.define(
   "Tasks",
   {
