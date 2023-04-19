@@ -1,5 +1,4 @@
 const Input = ({ label, type, value, onChange }) => {
-  console.log("llegamos acá");
   return (
     <div>
       <label className="block">{label}</label>

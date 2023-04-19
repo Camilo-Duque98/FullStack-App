@@ -31,9 +31,7 @@ export const updatedTask = (id, data) => {
   return async (dispatch) => {
     try {
       const res = await publicInstance.put(`task/${id}`, data);
-      console.log("Tarea: ", res);
       if (res.status === 200) {
-        console.log(data);
         dispatch({
           type: "UPDATE_TASK",
           payload: { id, ...data },

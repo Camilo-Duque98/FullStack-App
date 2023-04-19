@@ -6,7 +6,6 @@ function App() {
     <Fragment>
       <div>
         <Navbar />
-        {/* <Login /> */}
         <Home />
       </div>
     </Fragment>
