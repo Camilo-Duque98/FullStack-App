@@ -1,4 +1,4 @@
-# Aplicación base INF-236  
+# Aplicación
 En este repositorio encontrará un proyecto base que se basa en un CRUD (CREATE, READ, UPDATE, DELETE) sencillo de tareas.  
 ## Instalaciones necesarias  
 * **Docker**: Docker es una plataforma de software que permite a los desarrolladores crear, empaquetar y desplegar aplicaciones en contenedores. Un contenedor es una unidad de software que contiene todo lo necesario para que una aplicación se ejecute, incluyendo el código, las dependencias y las configuraciones del sistema.  
